@@ -3,7 +3,7 @@ package clases;
 public class Equipos {
 
     //enums
-    public enum Tipodeequipo{Disponible, Prestado, Mantenimiento}
+    public enum Tipodeequipo{Sistemas, Electronica, Manufactura, Telecomunicaciones}
     public enum Estadoactual{Disponible, Prestado, Mantenimiento}
 
     //atributos

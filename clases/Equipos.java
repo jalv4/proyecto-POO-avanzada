@@ -15,7 +15,7 @@ public class Equipos {
     private int valor;
     private int contusos;
 
-    private static int continstancias = 0;
+    private static int continstancias = 12;
 
     //getters
     public int getCodigo(){

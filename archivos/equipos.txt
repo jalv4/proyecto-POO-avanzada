@@ -1,0 +1,12 @@
+Sistemas;Disponible;1;Laptop Lenovo ThinkPad;Lab Sistemas 1;3500000;5
+Sistemas;Prestado;2;PC Gamer ASUS;Lab Sistemas 2;4800000;8
+Electronica;Mantenimiento;3;Osciloscopio Tektronix;Lab Electronica;7200000;12
+Electronica;Disponible;4;Multimetro Fluke;Lab Electronica;450000;15
+Manufactura;Disponible;5;Impresora 3D Creality;Lab Maker;5200000;4
+Manufactura;Prestado;6;Cortadora Laser;Lab Manufactura;11000000;3
+Telecomunicaciones;Disponible;7;Router Cisco;Lab Redes;1500000;10
+Telecomunicaciones;Mantenimiento;8;Switch HP Aruba;Lab Redes;2300000;7
+Sistemas;Disponible;9;Servidor Dell PowerEdge;DataCenter;14000000;6
+Electronica;Prestado;10;Fuente DC Regulable;Lab Electronica;980000;9
+Manufactura;Disponible;11;Brazo Robotico;Lab Automatizacion;8500000;2
+Telecomunicaciones;Disponible;12;Antena Ubiquiti;Lab Telecom;1250000;5

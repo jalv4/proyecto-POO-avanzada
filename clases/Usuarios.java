@@ -11,7 +11,7 @@ public abstract class Usuarios {
     protected roles rol;
     protected String credendial;
 
-    private static int continstancias = 0;
+    private static int continstancias = 10;
 
     //metodos abstractos
 

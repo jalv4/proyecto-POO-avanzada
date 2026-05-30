@@ -72,10 +72,11 @@ private static final long serialVersionUID = 1L;
         this.fechainicio = LocalDateTime.now();
         this.fechafin = null;
         this.penalizacion = 0;
+        this.activa = true;
         continstancias++;
         this.codigo = continstancias;
     }
-//Carga
+//Constructor que carga desde el archivo o deserializa.
     public Sesiones(int codigo, Equipos equipo, Usuarios usuario, LocalDateTime fechainicio, LocalDateTime fechafin, double penalizacion) {
         this.codigo = codigo;
         this.equipo = equipo;
@@ -83,17 +84,19 @@ private static final long serialVersionUID = 1L;
         this.fechainicio = fechainicio;
         this.fechafin = fechafin;
         this.penalizacion = penalizacion;
+        this.activa = activa;
     }
 
     @Override
     public String toString() {
         return "Sesiones{" +
                 "codigo=" + codigo +
-                ", equipo=" + equipo +
-                ", usuario=" + usuario +
+                ", equipo=" + equipo.getCodigo() +
+                ", usuario=" + usuario.nombre +
                 ", fechainicio=" + fechainicio +
                 ", fechafin=" + fechafin +
                 ", penalizacion=" + penalizacion +
+                ", activa=" + activa+
                 '}';
     }
 }

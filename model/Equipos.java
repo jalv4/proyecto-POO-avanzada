@@ -27,6 +27,13 @@ public class Equipos {
     public Estadoactual getEstado() {
         return estado;
     }
+    public String getLaboratorio() {
+    return this.laboratorio;
+    }
+ 
+    public String getNombre() {
+    return this.nombre;
+    }
 
     //setters
     public void setEstado(Estadoactual estado) {

@@ -99,12 +99,51 @@ public void recuperarEstado() {
     Object[] resultado = cargador.recuperarEstado();
     // si el archivo existia y se leyo bien, reemplaza las listas con lo que habia guardado
     if (resultado != null) {
-        equiposs   = (ArrayList<Equipos>) 
-                      resultado[0]; // recupera la lista de equipos
-        usuarioss  = (ArrayList<Usuarios>) 
-                      resultado[1]; // recupera la lista de usuarios
-        sesioneess = (ArrayList<Sesiones>) 
-                      resultado[2]; // recupera la lista de sesiones
+        equiposs   = (ArrayList<Equipos>) resultado[0]; // recupera la lista de equipos
+        usuarioss  = (ArrayList<Usuarios>) resultado[1]; // recupera la lista de usuarios
+        sesioneess = (ArrayList<Sesiones>) resultado[2]; // recupera la lista de sesiones
     }
+}
+    // Opcion 9 programa una sesion de uso para un equipo
+public void programarSesion(int codigoEquipo, int codigoUsuario) {
+    
+    // busca el equipo por codigo en la lista
+    Equipos equipoEncontrado = null;
+    for (Equipos e : equiposs) {
+        if (e.getCodigo() == codigoEquipo) {
+            equipoEncontrado = e;
+            break;
+        }
+    }
+    // si no existe el equipo avisa y sale del programa
+    if (equipoEncontrado == null) {
+        System.out.println("No se encontro un equipo con ese codigo");
+        return;
+    }
+    // si el equipo no esta disponible avisa y sale del programa
+    if (equipoEncontrado.getEstado() != Equipos.Estadoactual.Disponible) {
+        System.out.println("El equipo no esta disponible, el estado actual es: " + equipoEncontrado.getEstado());
+        return;
+    }
+    // busca el usuario por codigo en la lista
+    Usuarios usuarioEncontrado = null;
+    for (Usuarios u : usuarioss) {
+        if (u.codigo == codigoUsuario) {
+            usuarioEncontrado = u;
+            break;
+        }
+    }
+    // si no existe avisa y sale
+    if (usuarioEncontrado == null) {
+        System.out.println("No se encontro un usuario con ese codigo");
+        return;
+    }
+    // crea la sesion, la agrega a la lista y actualiza el estado del equipo
+    Sesiones nueva = new Sesiones(equipoEncontrado, usuarioEncontrado);
+    sesioneess.add(nueva);
+    equipoEncontrado.setEstado(Equipos.Estadoactual.Prestado);
+    equipoEncontrado.setContusos(equipoEncontrado.getContusos());
+    System.out.println("Sesion programada correctamente:");
+    System.out.println(nueva);
 }
 }
